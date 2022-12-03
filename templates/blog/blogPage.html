@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}{{blog.slug}}{% endblock title %}
+
+{% block body %}
+<div class="page">
+    <div class='text1'>
+        {{blog.Content|safe}}
+    </div>
+</div>    
+
+
+<div class="card" style="position:fixed ;">
+    <div class="align">
+        <span class="red"></span>
+        <span class="yellow"></span>
+        <span class="green"></span>
+    </div>
+    
+    <h2>Blog</h2>
+    {% for blog in allPost %}
+    
+    <div class="link">
+        <a href="/blog/{{blog.slug}}">
+            <button class="cta">
+            <span>{{blog.title}}</span>
+            <svg viewBox="0 0 13 10" height="10px" width="15px">
+                <path d="M1,5 L11,5"></path>
+              <polyline points="8 1 12 5 8 9"></polyline>
+            </svg>
+          </button>
+        </a>
+    </div>
+    {% endfor %}
+</div>    
+    
+<script src="{% static 'js/new.js' %}"></script>  
+
+
+{% endblock body %}

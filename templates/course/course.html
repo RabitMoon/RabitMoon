@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Courrse{% endblock title %}
+
+{% block body %}
+<div class="top-img">
+<img src="{% static 'png/background.jpg' %}" alt="">
+</div>
+
+<div class="heading">
+<img src="{% static 'png/pearson-2.png' %}" alt="course-logo" class="logo"><br>
+<h1>Notes</h1>
+</div><br>
+
+<div class="main-content">
+<div class="box">
+    <div class="odd-sem">
+        <div class="sem-1">
+            <h2>Sem-1</h2><hr>
+        </div><br>
+        <div class="sem-3">
+            <h2>Sem-3</h2><hr>
+            <ul>
+                {% comment %} <li><img src=" {% static 'img/math.jpeg'%}" alt=""><a href="math's.html">Discrete Math</a></li>
+                <li><img src=" {% static 'img/dsa.png'%}" alt=""><a href="/course/{{course.slug}}"> Dsa</a></li>
+                <li><img src=" {% static 'img/java.png'%}" alt=""><a href=""> Oop</a></li>
+                <li><img src=" {% static 'img/de.jpeg'%}" alt=""><a href=""> De</a></li>
+                <li><img src=" {% static 'img/dbms.jpeg'%}" alt=""><a href=""> Dbms</a></li> {% endcomment %}
+
+                {% for course in allPost %}
+                <li><img src=" {% static 'img/dbms.jpeg'%}" alt=""><a href="{{course.subject}}"> {{course.subject}}</a></li>
+                {% endfor %}
+            </ul>
+        </div><br>
+    </div>
+    <div class="even-sem">
+        <div class="sem-2">
+            <h2>Sem-2</h2><hr>
+        </div><br>
+    </div>
+</div>
+</div>
+
+<script>
+
+    const nav = document.querySelector('nav')
+    nav.style.backgroundColor = "transparent";
+</script>  
+
+{% endblock body %}

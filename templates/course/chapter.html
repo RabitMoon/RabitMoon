@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Courrse{% endblock title %}
+
+{% block body %}
+<div class="top-img">
+<img src="{% static 'png/background.jpg' %}" alt="">
+</div>
+
+<div class="heading">
+<img src="{% static 'png/pearson-2.png' %}" alt="course-logo" class="logo"><br>
+<h1>Notes</h1>
+</div><br>
+
+<div class="main-content">
+    <div class="ch">
+        <ul class="ch-list">
+            {% comment %} <li class="ch-name"><img src="../img/correltion.png" alt="" class="c-logo"><a href="Discrete Math/maths.html" class="sub-page"> Correlation</a></li>
+            <li class="ch-name"><img src="../img/regression.png" alt="" class="c-logo"><a href="Discrete Math/regression.html" class="sub-page"> Regession</a></li> {% endcomment %}
+
+            {% for course in allPost %}
+            <li class="ch-name"><img src="../img/regression.png" alt="" class="c-logo"><a href="{{course.slug}}" class="sub-page"> {{course.title}}</a></li>
+            {% endfor %}
+            <!-- <li class="ch-name"><img src="../img/dsa.png" alt="" class="c-logo"><a href="" class="sub-page"> Dsa</a></li> -->
+        </ul>
+    </div>
+</div>
+
+<script>
+
+    const nav = document.querySelector('nav')
+    nav.style.backgroundColor = "transparent";
+</script>  
+
+{% endblock body %}

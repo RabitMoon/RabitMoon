@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} {% endblock title %}</title>
+    <link rel="stylesheet" href="{% static 'blog7.css' %}" />
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+    <link rel="stylesheet" href="{% static 'course.css' %}" />
+    {% comment %} <script src="{% static 'js/new.js' %}"></script>   {% endcomment %}
+    {% comment %} <link rel="stylesheet" href="file//pages.css"> {% endcomment %}
+    {% comment %} <title>Learning websit by yash baravaliya</title> {% endcomment %}
+</head>
+<body>
+    <header>
+        <nav>
+            <span class="logo"><img src="{%static 'png//logo.png' %}" alt="logo"></span>
+            <ol>
+                <li><a href="/">Home</a></li>
+                <li><a href="/course">Course</a></li>
+                <li><a href="/blog">blog</a></li>
+                <li><a href="">contact us</a></li>
+                <!-- <li><a href="">java</a></li> -->
+            </ol>
+        </nav>
+        <!-- <hr> -->
+    </header>
+
+    {% block body %}
+        
+    {% endblock body %}
+
+</body>
+</html>
